@@ -1,0 +1,46 @@
+strict digraph "database-schema" {
+
+    splines=true; overlap=portho; model=subset;
+    rankdir=BT // - note LR would affect the record-style to stop the fields stacking
+
+    // simplistic legend approach
+	"database schema" [shape=box, color=black, fontcolor=black];
+	
+	// tables
+	node[shape=record, fontcolor=blue]
+	
+	table1 [rank=max, label="{{table1}|{name=varchar}|{index=integer}}", 
+				];
+				
+	table2 [label="{{table2}|{name=varchar}|{grid_name=varchar}|{first_index=int}|{index=int}"+
+					"|{num_col=int}|{vol_col=int}|{perc_col=int}"+
+					"|{col1=int}|{col2=int}|{col3=int}|{col4=int}|{col5=int}|{col6=int}|{col7=int}|{col8=int}|{col9=int}|{col10=int}|{col11=int}|{col12=int}|{version=int}|{active=int}}", 
+				];
+				
+	table3 [label="{{table3}|{first_index=int}|{second_index=int}|"+
+					 "{date=datetime}|{remarks=varchar}"+
+					 "|{col1=int}|{col2=int}|{col3=int}|{col4=int}|{col5=int}|{col6=int}|{col7=int}|{col8=int}|{col9=int}|{col10=int}|{version=int}|{active=int}}"];
+	table4 [label="{{table4}|{first_index=int}|{second_index=int}" +
+					"|{col1=int}|{col2=int}|{col3=int}|{col4=int}|{col5=int}|{col6=int}|{col7=int}|{col8=int}|{col9=int}|{col10=int}|{col11=int}|{col12=int}}"]					
+	table5 [label="{{table5}|{first_index=int}|{second_index=int}" +
+					"|{col1=int}|{col2=int}|{col3=int}|{col4=int}|{col5=int}|{col6=int}|{col7=int}|{col8=int}|{col9=int}|{col10=int}|{col11=int}|{col12=int}}"]
+
+					changelog	[label="{{changelog}|{date=datetime}|{name=char(49)}|{uuid=int}|{action=char(199)}|{version=int}}"];
+	
+	
+
+	// foreign keys
+    edge[group=links, style=dashed];
+	table4 -> table2[label="first_index -> first_index\nsecond_index -> 'index'"];
+	table5 -> table2[label="first_index -> first_index\nsecond_index -> 'index'"];
+	table3 -> table2[label="first_index -> first_index\nsecond_index -> 'index'"];
+	table2 -> table1[label="first_index->'index'"];
+	table2 -> changelog[label="version->version"];
+	table3 -> changelog[label="version->version ?!!"];
+
+    // asserts the ordering 
+    edge[style=invis];
+	table1 -> "database schema";
+
+	
+}
