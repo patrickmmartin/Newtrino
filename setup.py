@@ -45,10 +45,6 @@ setup(
 	long_description = 'Very lightweight database documenter.',
     license = 'BSD',
     packages = find_packages(exclude=['*.tests*']),
-	cmdclass = {'clean': CleanCommand},
-#    entry_points = {
-#        'trac.plugins': ['tracindexserversearch = tracindexserversearch'],	
-#    }
-
+	cmdclass = {'clean': CleanCommand}
 )
 
