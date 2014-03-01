@@ -1,5 +1,5 @@
 ## simple makefile - currently *nix like
-default: clean all docs tests
+default: clean all doco tests
 
 clean:
 	@echo [$@]
