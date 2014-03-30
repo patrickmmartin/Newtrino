@@ -1,4 +1,6 @@
 /Newtrino.egg-info
-
+/newtrino/*.pyc
 /build
+/#makefile#
 /dist
+/newtrino.html
