@@ -1,5 +1,5 @@
 ## simple makefile - currently *nix like
-default: clean all docs tests
+default: clean all tests doco 
 
 clean:
 	@echo [$@]
@@ -15,4 +15,4 @@ doco:
 
 tests:
 	@echo [$@]
-	@echo tests - WRITE ME!
+	@cd newtrino & python test_newtrino.py

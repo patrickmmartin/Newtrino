@@ -5,4 +5,5 @@
 @echo setting Graphviz path C:\Program Files (x86)\Graphviz2.36\bin
 @path C:\Program Files (x86)\Graphviz2.36\bin\;%PATH%
 @echo with MinGW, you can try this make version:
-@echo c:\MinGW\bin\mingw32-make.exe
+@path c:\MinGW\bin\;%PATH%
+@echo mingw32-make.exe

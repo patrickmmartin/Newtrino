@@ -1,4 +1,7 @@
-/Newtrino.egg-info
-
+Newtrino.egg-info 
+build 
+dist 
+*.pyc
 /build
 /dist
+/Newtrino.egg-info
