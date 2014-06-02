@@ -1,6 +1,3 @@
-Newtrino.egg-info 
-build 
-dist 
 *.pyc
 /build
 /dist
