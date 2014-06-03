@@ -15,4 +15,4 @@ doco:
 
 tests:
 	@echo [$@]
-	@cd newtrino & python test_newtrino.py
+	@cd newtrino ; python test_newtrino.py

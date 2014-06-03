@@ -1,5 +1,7 @@
 strict digraph "database-schema" {
 
+    viewport="800,1200,0.75,400,600"
+
     splines=true; overlap=portho; model=subset;
     rankdir=BT // - note LR would affect the record-style to stop the fields stacking
 
