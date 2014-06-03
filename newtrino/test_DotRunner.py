@@ -12,7 +12,7 @@ class TestDotRunner(TestCase):
 		from os import remove
 		# remove example files and output
 		remove(self.dotFile)
-#		remove(self.dotFile + '.svg')
+		remove(self.dotFile + '.svg')
 	
 	def test_rundot(self):
 		from dotrunner import DotRunner
