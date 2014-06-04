@@ -14,5 +14,5 @@ doco:
 	@pydoc -w newtrino
 
 tests:
-	@echo [$@]
-	@cd newtrino ; python test_newtrino.py
+	@echo [$@] $(OS)
+	@cd newtrino && python test_newtrino.py
