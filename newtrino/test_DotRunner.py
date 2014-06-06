@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from unittest import TestCase
 
 class TestDotRunner(TestCase):
@@ -21,7 +23,8 @@ class TestDotRunner(TestCase):
 		ret = dotRun.run(self.dotFile, '-Tsvg')
 		self.assertTrue(ret == 0, "return code %d from running dot" % ret)
 		self.assertTrue(cmp(self.samplePath + self.dotFile + '.svg', self.dotFile + '.svg'), 
-				   'file output %s should be identical to base in %s' % (self.dotFile + '.svg', self.samplePath)	 )
+				   'file output %s should be identical to base in %s' %
+				   (self.dotFile + '.svg', self.samplePath)	 )
 		
 
 	

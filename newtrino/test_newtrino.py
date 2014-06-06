@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from unittest import TextTestRunner, TestLoader, TestCase
 
 class TestNewtrino(TestCase):
