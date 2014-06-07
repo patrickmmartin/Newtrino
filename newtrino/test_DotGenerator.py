@@ -1,6 +1,7 @@
+
 #!/usr/bin/env python
 
-from unittest import TestCase
+from unittest import TextTestRunner, TestSuite, TestLoader, TestCase
 
 class TestDotGenerator(TestCase):
 	def setUp(self):
@@ -27,3 +28,6 @@ class TestDotGenerator(TestCase):
 				   (self.samplePath + 'database.txt', 'database.txt')	 )
 
 
+if __name__ == '__main__':
+	suite = TestLoader().loadTestsFromTestCase(TestDotGenerator)
+	TextTestRunner().run(suite)

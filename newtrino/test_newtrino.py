@@ -10,10 +10,6 @@ class TestNewtrino(TestCase):
 		# TODO PMM implement test
 		self.assertTrue(True, "schemaparser test not implemented")
 	
-	def test_dotgenerator(self):
-		# TODO PMM implement test
-		self.assertTrue(True, "dotgenerator test not implemented")
-		
 	def test_dotoutput(self):
 		# TODO PMM implement test
 		self.assertTrue(True, "dotoutput test not implemented")

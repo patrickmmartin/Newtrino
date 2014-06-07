@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from unittest import TestCase
+from unittest import TestCase, TestLoader, TextTestRunner
 
 class TestDotRunner(TestCase):
 	def setUp(self):
@@ -28,3 +28,6 @@ class TestDotRunner(TestCase):
 		
 
 	
+if __name__ == '__main__':
+	suite = TestLoader().loadTestsFromTestCase(TestDotRunner)
+	TextTestRunner().run(suite)
