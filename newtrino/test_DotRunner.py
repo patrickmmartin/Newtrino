@@ -24,7 +24,7 @@ class TestDotRunner(TestCase):
 		self.assertTrue(ret == 0, "return code %d from running dot" % ret)
 		self.assertTrue(cmp(self.samplePath + self.dotFile + '.svg', self.dotFile + '.svg'), 
 				   'file output %s should be identical to base in %s' %
-				   (self.dotFile + '.svg', self.samplePath)	 )
+				   (self.samplePath, self.dotFile + '.svg')	 )
 		
 
 	
