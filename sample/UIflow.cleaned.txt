@@ -1,0 +1,51 @@
+digraph G {
+ size="9";
+ graph [rankdir="TB" label="1st Time Use/Phone Registration" fontsize=12 bgcolor="#eeeeff"];
+ node [shape=box fontsize=9];
+ edge [color=blue fontsize=8 font="Arial"];
+
+
+cell_number_entry [label="Cell Number Entry"];
+ welcome [label="Welcome Page"];
+
+ member_name_creation [label="Member Name Creation"];
+ password_creation [label="Password Creation"];
+ member_name_unavailable [label="Member Name Unavailable"];
+ email_entry [label="Email Entry"];
+ zip_code_entry [label="Zip Code Entry"];
+ tos [label="TOS"];
+ decline_confirmation [label="Decline Confirmation"];
+ registration_confirmation [label="Registration Confirmation"];
+ member_name_entry [label="Member Name Entry"];
+ password_entry [label="Password Entry"];
+ confirm_phone_number [label="Confirm Phone Number"];
+ unsuccessfull_sign_in [label="Unsuccessfull Sign In"];
+ email_confirmation [label="Email Confirmation"];
+ main_menu [label="Main Menu"];
+
+ initial_screen [label="Initial Screen"]; // ?!
+
+ exit_application [label="Exit the Application"];
+
+
+welcome -> initial_screen [label="First Time"];
+ initial_screen -> member_name_creation [label="Register"];
+ initial_screen -> member_name_entry [label="Sign In"];
+ member_name_creation -> password_creation [label="Valid Member Name" dir="both"];
+ member_name_creation -> member_name_unavailable [label="Invalid Member Name" dir="both"];
+ welcome -> password_creation;
+ password_creation -> cell_number_entry  [dir="both"]; 
+ member_name_entry -> password_entry  [dir="both"]; 
+ cell_number_entry -> email_entry [dir="both"];
+ password_entry -> confirm_phone_number [label="Auth. Successful" dir="both"];
+ password_entry -> unsuccessfull_sign_in [label="Auth. Unsuccessful"];
+ email_entry -> zip_code_entry [dir="both"];
+ zip_code_entry -> tos [dir="both"];
+ confirm_phone_number -> main_menu;
+ unsuccessfull_sign_in -> member_name_entry [label="Try Again" constraint="false" ];
+ unsuccessfull_sign_in -> email_confirmation;
+ tos -> decline_confirmation [label="Decline" dir="both"];
+ tos -> registration_confirmation [label="Accept"];
+ decline_confirmation -> exit_application [label="Yes"];
+ registration_confirmation -> main_menu [label="10 Sec/NEXT"];
+ }
