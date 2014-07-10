@@ -3,8 +3,8 @@
 from subprocess import call
 
 class DotRunner:
-	def run(self, file, options):
+	def run(self, filename, options):
 		# should run dot here
-		return call(["dot", options, "-O " , file])
+		return call(["dot", options, "-O " , filename])
 		
 		
