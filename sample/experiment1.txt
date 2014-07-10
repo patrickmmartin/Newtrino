@@ -1,0 +1,39 @@
+strict digraph "database" {
+
+/* header here */
+
+node [shape=box]
+
+entity1;
+entity2;
+entity3;
+
+lookup1a;
+lookup1b;
+lookup1c;
+
+lookup2a;
+lookup2b;
+
+lookup3a;
+
+entity1 -> lookup1a [dir=reversed]; 
+entity1 -> lookup1b;
+entity1 -> lookup1c;
+
+entity2 -> lookup2a [dir=reversed]; 
+entity2 -> lookup2b;
+
+entity3 -> lookup3a [dir=reversed]; 
+
+entity1 -> entity2;
+
+entity1 -> entity3;
+
+link12 -> entity1;
+link12 -> entity2;
+
+link23 -> entity2;
+link23 -> entity3;
+
+}

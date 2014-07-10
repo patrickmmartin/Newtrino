@@ -1,0 +1,52 @@
+strict digraph "database" {
+
+/* header here */
+
+node [shape=box];
+
+subgraph cluster_entity1{
+style=invis;
+entity1;
+lookup1a;
+lookup1b;
+lookup1c;
+}
+
+subgraph cluster_entity2{
+style=invis;
+entity2;
+lookup2a;
+lookup2b;
+}
+
+subgraph cluster_entity3{
+style=invis;
+entity3;
+lookup3a;
+}
+
+
+{ rank=same link12 entity1 } 
+{ rank=same link23 entity3 } 
+
+
+entity1 -> lookup1a [dir=reversed]; 
+entity1 -> lookup1b;
+entity1 -> lookup1c;
+
+entity2 -> lookup2a [dir=reversed]; 
+entity2 -> lookup2b;
+
+entity3 -> lookup3a [dir=reversed]; 
+
+entity1 -> entity2;
+
+entity1 -> entity3;
+
+link12 -> entity1;
+link12 -> entity2;
+
+link23 -> entity2;
+link23 -> entity3;
+
+}
