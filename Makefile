@@ -11,7 +11,7 @@ all:
 
 doco:
 	@echo [$@]
-	@pydoc -w newtrino
+	@python -m pydoc -w newtrino
 
 tests:
 	@echo [$@] $(OS)
